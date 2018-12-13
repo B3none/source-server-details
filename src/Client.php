@@ -7,10 +7,15 @@ use B3none\ServerDetails\Models\ServerModel;
 
 class Client
 {
+    public static function create()
+    {
+        return new self(new ServerHelper());
+    }
+
     /**
      * @var ServerHelper
      */
-    private $serverHelper;
+    protected $serverHelper;
 
     /**
      * Client constructor.

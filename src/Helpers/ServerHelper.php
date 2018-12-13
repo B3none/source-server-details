@@ -34,7 +34,7 @@ class ServerHelper
         $server->setMap($queryData[1]);
         $server->setGame($queryData[2]);
         $server->setDescription($queryData[3]);
-        $server->setTags(explode(',', $queryData[4]));
+        $server->setTags(array_slice(explode(',', $queryData[4]), 1, -1));
 
         $packet = $queryData[4];
         $server->setAppId(array_pop(unpack("S", substr($packet, 0, 2))));

@@ -2,12 +2,14 @@
 
 require("vendor/autoload.php");
 
-$a = new \B3none\ServerDetails\Helpers\ServerHelper();
+
+
 try {
-    $serverDetails = $a->getServerDetails('retake1.tfrag.dk', '27016');
+    $client = \B3none\ServerDetails\Client::create();
+
+    $serverDetails = $client->getServer('retake1.tfrag.dk', '27016');
 
     print_r($serverDetails);
 } catch (Exception $e) {
     echo 'error';
 }
-//retake1.tfrag.dk:27016

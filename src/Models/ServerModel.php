@@ -262,8 +262,6 @@ class ServerModel
     }
 
     /**
-     * UNRELIABLE as there is other data mixed in.
-     *
      * @return array
      */
     public function getTags(): array
