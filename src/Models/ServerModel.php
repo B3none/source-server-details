@@ -80,7 +80,7 @@ class ServerModel
     /**
      * @param string $name
      */
-    public function setName(string $name)
+    public function setName(string $name): void
     {
         $this->name = $name;
     }
@@ -96,7 +96,7 @@ class ServerModel
     /**
      * @param string $map
      */
-    public function setMap(string $map)
+    public function setMap(string $map): void
     {
         $this->map = $map;
     }
@@ -112,7 +112,7 @@ class ServerModel
     /**
      * @param string $game
      */
-    public function setGame(string $game)
+    public function setGame(string $game): void
     {
         $this->game = $game;
     }
@@ -128,7 +128,7 @@ class ServerModel
     /**
      * @param string $description
      */
-    public function setDescription(string $description)
+    public function setDescription(string $description): void
     {
         $this->description = $description;
     }
@@ -144,7 +144,7 @@ class ServerModel
     /**
      * @param int $players
      */
-    public function setPlayers(int $players)
+    public function setPlayers(int $players): void
     {
         $this->players = $players;
     }
@@ -160,7 +160,7 @@ class ServerModel
     /**
      * @param int $maxPlayers
      */
-    public function setMaxPlayers(int $maxPlayers)
+    public function setMaxPlayers(int $maxPlayers): void
     {
         $this->maxPlayers = $maxPlayers;
     }
@@ -176,7 +176,7 @@ class ServerModel
     /**
      * @param int $bots
      */
-    public function setBots(int $bots)
+    public function setBots(int $bots): void
     {
         $this->bots = $bots;
     }
@@ -192,7 +192,7 @@ class ServerModel
     /**
      * @param bool $isDedicated
      */
-    public function setIsDedicated(bool $isDedicated)
+    public function setIsDedicated(bool $isDedicated): void
     {
         $this->isDedicated = $isDedicated;
     }
@@ -208,7 +208,7 @@ class ServerModel
     /**
      * @param string $os
      */
-    public function setOS(string $os)
+    public function setOS(string $os): void
     {
         $this->os = $os;
     }
@@ -224,7 +224,7 @@ class ServerModel
     /**
      * @param bool $hasPassword
      */
-    public function setHasPassword(bool $hasPassword)
+    public function setHasPassword(bool $hasPassword): void
     {
         $this->hasPassword = $hasPassword;
     }
@@ -240,7 +240,7 @@ class ServerModel
     /**
      * @param bool $hasVAC
      */
-    public function setHasVAC(bool $hasVAC)
+    public function setHasVAC(bool $hasVAC): void
     {
         $this->hasVAC = $hasVAC;
     }
@@ -256,7 +256,7 @@ class ServerModel
     /**
      * @param string $appId
      */
-    public function setAppId(string $appId)
+    public function setAppId(string $appId): void
     {
         $this->appId = $appId;
     }
