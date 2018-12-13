@@ -60,9 +60,14 @@ class ServerModel
     protected $hasVAC;
 
     /**
+     * @var string
+     */
+    protected $appId;
+
+    /**
      * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
@@ -70,7 +75,7 @@ class ServerModel
     /**
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->name = $name;
     }
@@ -78,7 +83,7 @@ class ServerModel
     /**
      * @return string
      */
-    public function getMap()
+    public function getMap(): string
     {
         return $this->map;
     }
@@ -86,7 +91,7 @@ class ServerModel
     /**
      * @param string $map
      */
-    public function setMap($map)
+    public function setMap(string $map)
     {
         $this->map = $map;
     }
@@ -94,7 +99,7 @@ class ServerModel
     /**
      * @return string
      */
-    public function getGame()
+    public function getGame(): string
     {
         return $this->game;
     }
@@ -102,7 +107,7 @@ class ServerModel
     /**
      * @param string $game
      */
-    public function setGame($game)
+    public function setGame(string $game)
     {
         $this->game = $game;
     }
@@ -110,7 +115,7 @@ class ServerModel
     /**
      * @return string
      */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -118,7 +123,7 @@ class ServerModel
     /**
      * @param string $description
      */
-    public function setDescription($description)
+    public function setDescription(string $description)
     {
         $this->description = $description;
     }
@@ -126,7 +131,7 @@ class ServerModel
     /**
      * @return int
      */
-    public function getPlayers()
+    public function getPlayers(): int
     {
         return $this->players;
     }
@@ -134,7 +139,7 @@ class ServerModel
     /**
      * @param int $players
      */
-    public function setPlayers($players)
+    public function setPlayers(int $players)
     {
         $this->players = $players;
     }
@@ -142,7 +147,7 @@ class ServerModel
     /**
      * @return int
      */
-    public function getMaxPlayers()
+    public function getMaxPlayers(): int
     {
         return $this->maxPlayers;
     }
@@ -150,7 +155,7 @@ class ServerModel
     /**
      * @param int $maxPlayers
      */
-    public function setMaxPlayers($maxPlayers)
+    public function setMaxPlayers(int $maxPlayers)
     {
         $this->maxPlayers = $maxPlayers;
     }
@@ -158,7 +163,7 @@ class ServerModel
     /**
      * @return int
      */
-    public function getBots()
+    public function getBots(): int
     {
         return $this->bots;
     }
@@ -166,7 +171,7 @@ class ServerModel
     /**
      * @param int $bots
      */
-    public function setBots($bots)
+    public function setBots(int $bots)
     {
         $this->bots = $bots;
     }
@@ -174,7 +179,7 @@ class ServerModel
     /**
      * @return bool
      */
-    public function isDedicated()
+    public function isDedicated(): bool
     {
         return $this->isDedicated;
     }
@@ -182,7 +187,7 @@ class ServerModel
     /**
      * @param bool $isDedicated
      */
-    public function setIsDedicated($isDedicated)
+    public function setIsDedicated(bool $isDedicated)
     {
         $this->isDedicated = $isDedicated;
     }
@@ -190,7 +195,7 @@ class ServerModel
     /**
      * @return string
      */
-    public function getOS()
+    public function getOS(): string
     {
         return $this->os;
     }
@@ -198,7 +203,7 @@ class ServerModel
     /**
      * @param string $os
      */
-    public function setOS($os)
+    public function setOS(string $os)
     {
         $this->os = $os;
     }
@@ -206,7 +211,7 @@ class ServerModel
     /**
      * @return bool
      */
-    public function getHasPassword()
+    public function getHasPassword(): bool
     {
         return $this->hasPassword;
     }
@@ -214,7 +219,7 @@ class ServerModel
     /**
      * @param bool $hasPassword
      */
-    public function setHasPassword($hasPassword)
+    public function setHasPassword(bool $hasPassword)
     {
         $this->hasPassword = $hasPassword;
     }
@@ -222,7 +227,7 @@ class ServerModel
     /**
      * @return bool
      */
-    public function getHasVAC()
+    public function getHasVAC(): bool
     {
         return $this->hasVAC;
     }
@@ -230,8 +235,24 @@ class ServerModel
     /**
      * @param bool $hasVAC
      */
-    public function setHasVAC($hasVAC)
+    public function setHasVAC(bool $hasVAC)
     {
         $this->hasVAC = $hasVAC;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAppId(): string
+    {
+        return $this->appId;
+    }
+
+    /**
+     * @param string $appId
+     */
+    public function setAppId(string $appId)
+    {
+        $this->appId = $appId;
     }
 }
