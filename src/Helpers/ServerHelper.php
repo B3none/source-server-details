@@ -35,6 +35,8 @@ class ServerHelper
         $server->setGame($queryData[2]);
         $server->setDescription($queryData[3]);
         $server->setTags(explode(',', $queryData[4]));
+
+        $packet = $queryData[4];
         $server->setAppId(array_pop(unpack("S", substr($packet, 0, 2))));
         $server->setPlayers(ord(substr($packet, 2, 1)));
         $server->setMaxPlayers(ord(substr($packet, 3, 1)));
