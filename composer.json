@@ -1,0 +1,17 @@
+{
+    "name": "b3none/server-details",
+    "description": "Get a source server's details",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Alex Blackham",
+            "email": "ablackham2000@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "B3none\\ServerDetails\\": "src"
+        }
+    },
+    "require": {}
+}
