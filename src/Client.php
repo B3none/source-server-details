@@ -2,7 +2,7 @@
 
 namespace B3none\ServerDetails;
 
-use B3none\Helpers\ServerHelper;
+use B3none\ServerDetails\Helpers\ServerHelper;
 use B3none\ServerDetails\Models\ServerModel;
 
 class Client
@@ -22,8 +22,18 @@ class Client
         $this->serverHelper = $serverHelper;
     }
 
-    public function getServer(): ServerModel
+    /**
+     * @param string $ip
+     * @param string $port
+     * @return null|ServerModel
+     * @throws \Exception
+     */
+    public function getServer(string $ip, string $port): ?ServerModel
     {
-        print_r($this->serverHelper->getServerDetails());
+        try {
+            return $this->serverHelper->getServerDetails($ip, $port);
+        } catch (\Exception $exception) {
+            return null;
+        }
     }
 }

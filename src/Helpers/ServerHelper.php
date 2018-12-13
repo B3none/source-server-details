@@ -1,16 +1,18 @@
 <?php
 
-namespace B3none\Helpers;
+namespace B3none\ServerDetails\Helpers;
+
+use B3none\ServerDetails\Models\ServerModel;
 
 class ServerHelper
 {
     /**
      * @param string $ip
      * @param string $port
-     * @return array
+     * @return ServerModel
      * @throws \Exception
      */
-    public function getServerDetails(string $ip, string $port)
+    public function getServerDetails(string $ip, string $port): ServerModel
     {
         $socket = socket_create(AF_INET, SOCK_DGRAM, 0);
         $result = socket_connect($socket, $ip, $port);
@@ -26,21 +28,24 @@ class ServerHelper
 
         $queryData = explode("\x00", substr($out, 6), 5);
 
-        $server = [];
+        print_r($queryData);
+        die();
 
-        $server['name'] = $queryData[0];
-        $server['map'] = $queryData[1];
-        $server['game'] = $queryData[2];
-        $server['description'] = $queryData[3];
-        $packet = $queryData[4];
-        $app_id = array_pop(unpack("S", substr($packet, 0, 2)));
-        $server['players'] = ord(substr($packet, 2, 1));
-        $server['playersmax'] = ord(substr($packet, 3, 1));
-        $server['bots'] = ord(substr($packet, 4, 1));
-        $server['dedicated'] = substr($packet, 5, 1);
-        $server['os'] = substr($packet, 6, 1);
-        $server['password'] = ord(substr($packet, 7, 1));
-        $server['vac'] = ord(substr($packet, 8, 1));
+        $server = new ServerModel();
+
+        $server->setName($queryData[0]);
+        $server->setMap($queryData[1]);
+        $server->setGame($queryData[2]);
+        $server->setDescription($queryData[3]);
+        $server->setTags(explode(',', $queryData[4]));
+        $server->setAppId(array_pop(unpack("S", substr($packet, 0, 2))));
+        $server->setPlayers(ord(substr($packet, 2, 1)));
+        $server->setMaxPlayers(ord(substr($packet, 3, 1)));
+        $server->setBots(ord(substr($packet, 4, 1)));
+        $server->setIsDedicated(substr($packet, 5, 1));
+        $server->setOS(substr($packet, 6, 1));
+        $server->setHasPassword(ord(substr($packet, 7, 1)));
+        $server->setHasVAC(ord(substr($packet, 8, 1)));
 
         return $server;
     }

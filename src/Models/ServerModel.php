@@ -65,6 +65,11 @@ class ServerModel
     protected $appId;
 
     /**
+     * @var array
+     */
+    protected $tags = [];
+
+    /**
      * @return string
      */
     public function getName(): string
@@ -254,5 +259,21 @@ class ServerModel
     public function setAppId(string $appId)
     {
         $this->appId = $appId;
+    }
+
+    /**
+     * @return array
+     */
+    public function getTags(): array
+    {
+        return $this->tags;
+    }
+
+    /**
+     * @param array $tags
+     */
+    public function setTags(array $tags): void
+    {
+        $this->tags = $tags;
     }
 }
