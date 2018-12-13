@@ -28,9 +28,6 @@ class ServerHelper
 
         $queryData = explode("\x00", substr($out, 6), 5);
 
-        print_r($queryData);
-        die();
-
         $server = new ServerModel();
 
         $server->setName($queryData[0]);
