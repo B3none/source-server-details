@@ -2,8 +2,6 @@
 
 require("vendor/autoload.php");
 
-
-
 try {
     $client = \B3none\ServerDetails\Client::create();
 
