@@ -1,5 +1,6 @@
 {
     "name": "b3none/server-details",
+    "version": "1.0.1",
     "description": "Get a source server's details",
     "type": "library",
     "authors": [
