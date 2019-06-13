@@ -37,7 +37,8 @@ class ServerHelper
         $server->setTags(array_slice(explode(',', $queryData[4]), 1, -1));
 
         $packet = $queryData[4];
-        $server->setAppId(array_pop(unpack("S", substr($packet, 0, 2))));
+        $appId = unpack("S", substr($packet, 0, 2));
+        $server->setAppId(array_pop($appId));
         $server->setPlayers(ord(substr($packet, 2, 1)));
         $server->setMaxPlayers(ord(substr($packet, 3, 1)));
         $server->setBots(ord(substr($packet, 4, 1)));
